@@ -12,13 +12,32 @@
     <div class="skip"><a href = "#main">Skip to Main Content</a></div>
     <nav>
         <ul>
-        <li><a href="index.html">Home/Pets</a></li>
-        <li><a href="travel.html">Travel</a></li>
-        <li><a href="recipes.html" class="active">Recipes</a></li>
+          <li><a href="index.html" class="confirm-link">Home/Pets</a></li>
+          <li><a href="travel.html"class="confirm-link">Travel</a></li>
+          <li><a href="recipes.html"class="confirm-link active">Recipes</a></li>
+        </ul>
+      </nav>
+      <script>
+        var confirmLinks = document.querySelectorAll(".confirm-link");
+    
+        confirmLinks.forEach(function(link) {
+            link.addEventListener("click", function(e) {
+                if (!confirm("Are you sure you want to leave the Recipes page?")) {
+                    e.preventDefault();
+                }
+            });
+        });
+      </script>
+    <nav class="foods-nav">
+        <span style="font-size: 25px; color: black; font-weight: bold;">Jump to...</span>
+        <ul>
+          <li><a href="#pasta">White Sauce Pasta</a></li>
+          <li><a href="#sushi">Sushi Bake</a></li>
+          <li><a href="#tomato">Tomato and Eggs</a></li>
         </ul>
     </nav>
     <main id = "main">
-        <div>
+        <div id="pasta">
             <h2>White Sauce Pasta</h2>
             <span>Origin: France/Italy</span>
             <span>Source: Own Recipe</span>
@@ -69,7 +88,7 @@
             </div>
             
         </div>
-        <div>
+        <div id="sushi">
             <h2>Sushi Bake</h2>
             <span>Origin: Asian</span>
             <span>Source: Own recipe</span>
@@ -117,7 +136,7 @@
             </div>
             
         </div>
-        <div>
+        <div id="tomato">
             <h2>Tomato and Eggs</h2>
             <span>Origin: China</span>
             <span>Source: Own recipe</span>

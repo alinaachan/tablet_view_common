@@ -12,13 +12,36 @@
   <div class="skip"><a href = "#main">Skip to Main Content</a></div>
   <nav>
     <ul>
-      <li><a href="index.html" class="active">Home/Pets</a></li>
-      <li><a href="travel.html">Travel</a></li>
-      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="index.html" class="confirm-link active">Home/Pets</a></li>
+      <li><a href="travel.html"class="confirm-link">Travel</a></li>
+      <li><a href="recipes.html"class="confirm-link">Recipes</a></li>
+    </ul>
+  </nav>
+  <script>
+    var confirmLinks = document.querySelectorAll(".confirm-link");
+
+    confirmLinks.forEach(function(link) {
+      link.addEventListener("click", function(e) {
+        if (!confirm("Are you sure you want to leave the Pets page?")) {
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+  <nav class="pets-nav">
+    <span style="font-size: 25px; color: black; font-weight: bold;">Jump to...</span>
+    <ul>
+      <li><a href="#basil">Basil</a></li>
+      <li><a href="#york">York</a></li>
+      <li><a href="#sofie">Sofie</a></li>
+      <li><a href="#lucy">Lucy</a></li>
+      <li><a href="#jingle">Jingle</a></li>
+      <li><a href="#bear">Bear</a></li>
+      <li><a href="#jojo">Jojo</a></li>
     </ul>
   </nav>
   <main id = "main"> 
-      <div>
+      <div id="basil">
         <h2>Basil</h2>
         <div class="main-pet-pic">
           <img src = "images/gurl_who_u_looking_at.png" width = 400 alt = "Fluffy white dog with paw on knee, begging for attention and giving you the side eye"/>
@@ -45,7 +68,7 @@
         <!-- Bianca and Alina -->
 
       </div>
-      <div>
+      <div id="york">
         <h2>York</h2>
         <div class="main-pet-pic">
           <img src = "images/york.jpg" width = 400 alt = "He is a large Black German Shepherd."/>
@@ -70,7 +93,7 @@
         <!-- Ben Montgomery -->
 
       </div>
-      <div>
+      <div id="sofie">
         <h2>Sofie</h2>
         <div class="main-pet-pic">
           <img src = "images/sofie1.JPG" width = 400 alt = "Beagle mix wearing glasses."/>
@@ -95,7 +118,7 @@
         
         <!-- Jacob Timmerman -->
       </div>
-      <div>
+      <div id="lucy">
         <h2>Lucy</h2>
         <div class="main-pet-pic">
           <img src = "images/Lucy.JPG" width = 400 alt = "Calico with white, orange, and black coloring."/>
@@ -118,7 +141,7 @@
           <li>Her bed</li>
         </ul>
       </div>
-      <div>
+      <div id="jingle">
         <h2>Jingle</h2>
         <div class="main-pet-pic">
           <img src = "images/jingle.jpg" width = 400 alt = "Jingle is a domestic shorthair cat with a white chest and belly."/>
@@ -141,7 +164,7 @@
           <li>Eating treats</li>
         </ul>
       </div>
-      <div>
+      <div id="bear">
         <h2>Bear</h2>
         <div class="main-pet-pic">
           <img src = "images/bear.jpg" width = 400 alt="A fluffy black, white, and tan Shiba Inu with pointed ears named Bear"/>
@@ -169,7 +192,7 @@
           <li>Fetch</li>
         </ul>
       </div>
-      <div>
+      <div id="jojo">
         <h2>Jojo</h2>
         <div class="main-pet-pic">
           <img src = "images/jojo.jpg" width = 400 alt="White/light brown small Lhasa-Apso"/>

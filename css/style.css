@@ -3,7 +3,10 @@ body {
     font-size: 20px;
 }
 main {
-    padding: 10px 10px 10px 10px;
+    padding: 0 10px 10px 10px;
+}
+.pets-nav, .travels-nav {
+    display: none;
 }
 nav {
     display: flex;
@@ -19,8 +22,11 @@ nav > li {
     list-style-type: none;
 }
 nav a {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
+}
+nav a:hover {
+    text-decoration: underline;
 }
 ul {
     padding-left: 10px;
@@ -51,7 +57,7 @@ h2 {
     font-size: 40px;
     font-family:Georgia, 'Times New Roman', Times, serif;
     color:rgb(88, 104, 223);
-    margin-top: 50px;
+    margin-top: 40px;
 }
 h3 {
     margin-top: 15px;
@@ -67,8 +73,19 @@ p {
     margin-bottom: 10px;
     line-height: 1.5;
 }
-.skip {
-    display: none;
+.skip a {
+    font-size: 17px;
+    padding: 5px;
+    background-color: rgb(234, 239, 255);
+    border: 2px solid rgb(112, 112, 216);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position: absolute;
+    top:-40px;
 }
 li a.active {
     background-color: rgb(255, 235, 244);
@@ -91,11 +108,19 @@ ol {
     list-style-type: decimal;
 }
 
+:focus {
+    outline: 2px solid rgb(164, 26, 49);
+}
+
 .container {
     display: grid;
     grid-template-columns: auto auto;
 }
-
+.container img {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+}
 .container img:nth-child(1) {
     grid-column: 1;
     grid-row: 1;
@@ -161,6 +186,30 @@ ol {
     .gif {display: none;}
 }
 
+/* Portrait Tablet view */
+@media only screen and (min-width: 600px) {
+    .pets-nav, .travels-nav, .foods-nav {
+        display: inline-block;
+        border: none;
+        background-color: #fff0f0;
+        margin-top: 10px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 20px;
+        color: rgb(120, 120, 123);
+    }
+    .pets-nav li, .travels-nav li, .foods-nav li {
+        list-style-type:decimal;
+    }
+    .pets-nav a, .travels-nav a, .foods-nav a {
+        font-size: 20px;
+    }   
+    .skip a:focus {
+        top: 20px;
+    }
+}
+
+/* Landscape Tablet view */
 @media only screen and (min-width: 768px) {
     nav {
         display: block;
@@ -168,6 +217,58 @@ ol {
     nav > ul {
         display: flex;
         justify-content: space-around;
+    }
+    .pets-nav, .travels-nav, .foods-nav {
+        display: block;
+        border: none;
+        background-color: #fff0f0;
+        margin-top: 10px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 20px;
+        color: rgb(120, 120, 123);
+    }
+    .pets-nav > ul, .travels-nav > ul, .foods-nav > ul {
+        display: block;
+    }
+    .pets-nav li, .travels-nav li, .foods-nav li {
+        list-style-type:decimal;
+    }
+    .pets-nav a, .travels-nav a, .foods-nav a {
+        font-size: 20px;
+    }   
+    .skip a:focus {
+        top: 20px;
+    }
+}
+
+/* Laptop or Desktop view */
+@media only screen and (min-width: 992px) {
+    nav {
+        display: block;
+    }
+    nav > ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    .pets-nav, .travels-nav, .foods-nav {
+        display: inline-block;
+        border: none;
+        background-color: #fff0f0;
+        margin-top: 10px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 20px;
+        color: rgb(120, 120, 123);
+    }
+    .pets-nav > ul, .travels-nav > ul, .foods-nav > ul {
+        display: block;
+    }
+    .pets-nav li, .travels-nav li, .foods-nav li {
+        list-style-type:decimal;
+    }
+    .pets-nav a, .travels-nav a, .foods-nav a {
+        font-size: 20px;
     }
     .ingredients-grid {
         padding-left: 20px;
