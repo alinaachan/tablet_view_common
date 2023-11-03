@@ -12,22 +12,31 @@
     <div class="skip"><a href = "#main">Skip to Main Content</a></div>
     <nav>
         <ul>
-            <li><a href="index.html" class="confirm-link">Home/Pets</a></li>
-            <li><a href="travel.html"class="confirm-link active">Travel</a></li>
-             <li><a href="recipes.html"class="confirm-link">Recipes</a></li>
+        <li><a href="index.html"class="confirm-link">Home/Pets</a></li>
+        <li><a href="travel.html" class="confirm-link active">Travel</a></li>
+        <li><a href="recipes.html"class="confirm-link">Recipes</a></li>
         </ul>
     </nav>
     <script>
         var confirmLinks = document.querySelectorAll(".confirm-link");
     
         confirmLinks.forEach(function(link) {
-            link.addEventListener("click", function(e) {
-                if (!confirm("Are you sure you want to leave the Travels page?")) {
-                    e.preventDefault();
-                }
-            });
+          link.addEventListener("click", function(e) {
+            if (!confirm("Are you sure you want to leave the Travels page?")) {
+              e.preventDefault(); 
+            }
+          });
         });
     </script>
+    <nav class="travels-nav">
+        <span style="font-size: 25px; color: black; font-weight: bold;">Jump to...</span>
+        <ul>
+          <li><a href="#sanfran">San Francisco</a></li>
+          <li><a href="#halong">Ha Long Bay</a></li>
+          <li><a href="#shanghai">Shanghai</a></li>
+          <li><a href="#machu">Machu Picchu</a></li>
+        </ul>
+    </nav>
     <main id = "main">
         <div id="sanfran">
             <h2>San Francisco, USA</h2>
